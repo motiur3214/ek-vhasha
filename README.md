@@ -1,6 +1,3 @@
-Ek Bhasha (এক ভাষা) - AI-Powered Bengali Voice Translator
-Ek Bhasha is a simple yet powerful web application built with Laravel that translates spoken Bengali into spoken English, designed to bridge communication gaps. It uses a state-of-the-art AI pipeline to provide accurate, natural-sounding translations with audio output.
-
 Core Features
 🎤 Voice Input: Record Bengali speech directly in the browser using the Web Audio API.
 
