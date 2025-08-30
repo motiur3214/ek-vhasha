@@ -1,0 +1,39 @@
+services:
+  - type: web
+    name: ek-vhasha
+    env: php
+    plan: free
+    branch: main
+    build:
+      - command: "composer install --no-dev --optimize-autoloader"
+      - command: "php artisan key:generate --force"
+      - command: "php artisan config:cache"
+      - command: "php artisan route:cache"
+      - command: "php artisan view:cache"
+    startCommand: "php artisan serve --host 0.0.0.0 --port $PORT"
+    disks:
+      - name: data
+        mountPath: /var/data
+        sizeGB: 1
+    envVars:
+      - key: APP_NAME
+        value: "Ek Vhasha"
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: false
+      - key: APP_URL
+        fromService:
+          type: web
+          name: ek-vhasha
+          property: url
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: DB_CONNECTION
+        value: sqlite
+      - key: DB_DATABASE
+        value: /var/data/database.sqlite
+      - key: OPENAI_API_KEY
+        sync: false # Keep your API key secret
+      - key: APP_KEY # This will be set by the build command
+        sync: false
