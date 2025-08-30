@@ -6,7 +6,9 @@ services:
     branch: main
     build:
       - command: "composer install --no-dev --optimize-autoloader"
+      - command: "npm install && npm run build" # Only if you use Vite or npm assets
       - command: "php artisan key:generate --force"
+      - command: "php artisan migrate --force" # Run migrations automatically
       - command: "php artisan config:cache"
       - command: "php artisan route:cache"
       - command: "php artisan view:cache"
@@ -34,6 +36,6 @@ services:
       - key: DB_DATABASE
         value: /var/data/database.sqlite
       - key: OPENAI_API_KEY
-        sync: false # Keep your API key secret
+        sync: false # Set this in the Render dashboard
       - key: APP_KEY # This will be set by the build command
         sync: false
