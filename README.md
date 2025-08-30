@@ -1,65 +1,61 @@
-Core Features
-🎤 Voice Input: Record Bengali speech directly in the browser using the Web Audio API.
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-🧠 High-Quality Translation: Utilizes a sophisticated AI pipeline for accurate and context-aware translations.
+<p align="center">
+<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
+<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+</p>
 
-🔊 Audio Output: Listen to the final English translation in a clear, natural voice.
+## About Laravel
 
-✨ Clean & Simple UI: A minimal, user-friendly interface built with Tailwind CSS.
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-How It Works
-This app uses a powerful three-step AI process to ensure the highest quality translations, leveraging the best model for each specific task:
+- [Simple, fast routing engine](https://laravel.com/docs/routing).
+- [Powerful dependency injection container](https://laravel.com/docs/container).
+- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
+- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
+- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
+- [Robust background job processing](https://laravel.com/docs/queues).
+- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Speech-to-Text (Transcription): A user's Bengali audio is first transcribed into accurate Bengali text using OpenAI's Whisper model. This allows the system to see what was said.
+Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-Text-to-Text Translation: The transcribed text is then translated into English by OpenAI's GPT-4o, their most advanced language model. This step ensures that linguistic nuance and the original meaning are preserved.
+## Learning Laravel
 
-Text-to-Speech (Synthesis): The final English text is converted back into high-quality spoken audio using OpenAI's TTS model.
+Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-Future Vision
-The ultimate goal of Ek Bhasha is to become a universal translator for all Bengali speakers. The next major milestone is to integrate a custom language model that can first translate diverse local dialects and pronunciations into standardized Bengali. This "normalization" step will then be passed to the English translation model, making the tool accessible and accurate for everyone, regardless of their regional dialect.
+You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-Technologies Used
-Backend: Laravel
+If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-Frontend: Blade, Tailwind CSS, JavaScript (Web Audio API)
+## Laravel Sponsors
 
-AI Services: OpenAI API (Whisper, GPT-4o, TTS)
+We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
 
-Getting Started
-Follow these steps to get the project running on your local machine.
+### Premium Partners
 
-Prerequisites
-PHP >= 8.1
+- **[Vehikl](https://vehikl.com)**
+- **[Tighten Co.](https://tighten.co)**
+- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
+- **[64 Robots](https://64robots.com)**
+- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
+- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
+- **[Redberry](https://redberry.international/laravel-development)**
+- **[Active Logic](https://activelogic.com)**
 
-Composer
+## Contributing
 
-An OpenAI API Key
+Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-Installation
-Clone the repository:
+## Code of Conduct
 
-git clone [https://github.com/your-username/ek-bhasha.git](https://github.com/your-username/ek-bhasha.git)
-cd ek-bhasha
+In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
 
-Install PHP dependencies:
+## Security Vulnerabilities
 
-composer install
+If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-Set up your environment file:
+## License
 
-cp .env.example .env
-
-Generate an application key:
-
-php artisan key:generate
-
-Add your OpenAI API key to the .env file:
-
-OPENAI_API_KEY="sk-..."
-
-Run the development server:
-
-php artisan serve
-
-Now, open http://127.0.0.1:8000 in your browser to use the application.
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
